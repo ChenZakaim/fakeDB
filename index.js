@@ -10,7 +10,7 @@ function loadDoc(key) {
 
 loadDoc("people");
 loadDoc("films");
-loadDoc("species");
+loadDoc("starships");
 
 
 
@@ -18,12 +18,13 @@ function getArrayOf(objName) {
     return JSON.parse(localStorage.getItem(objName));
 }
 
-function getObjById(id, objType) {
-    const ARR = JSON.parse(localStorage.getItem(objType));
-    for(let obj of ARR) {
-        if(obj.id === id) {
-            return obj
-        }
-    }
-    return {};
-}
+getFilterdArrayByAttribure = (arr, attribute, value) => arr.filter((element) => element[attribute] === value);
+
+const PEOPLE_ARR = getArrayOf("people");
+const FILMS_ARR = getArrayOf("films");
+const STARSHIPS_ARR = getArrayOf("starships");
+
+console.log('getArrayOf("people"): ', getArrayOf("people"))
+console.log('eyecolor: ', getFilterdArrayByAttribure(PEOPLE_ARR, "eye_color", 'blue'));
+console.log('getFilmsOfDirector: ', getFilterdArrayByAttribure(FILMS_ARR, "director", 'George Lucas'));
+console.log('spaces: ', getFilterdArrayByAttribure(STARSHIPS_ARR, "manufacturer","Corellian Engineering Corporation"));
