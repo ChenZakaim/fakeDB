@@ -27,3 +27,19 @@ getFilms = () => {
 getShips = () => {
     
 }
+
+
+
+function getArrayOf(objName) {
+    return JSON.parse(localStorage.getItem(objName));
+}
+
+function getObjById(id, objType) {
+    const ARR = JSON.parse(localStorage.getItem(objType));
+    for(let obj of ARR) {
+        if(obj.id === id) {
+            return obj
+        }
+    }
+    return {};
+}
