@@ -29,7 +29,6 @@ console.log('eyecolor: ', getFilterdArrayByAttribure(PEOPLE_ARR, "eye_color", 'b
 console.log('getFilmsOfDirector: ', getFilterdArrayByAttribure(FILMS_ARR, "director", 'George Lucas'));
 console.log('spaces: ', getFilterdArrayByAttribure(STARSHIPS_ARR, "manufacturer","Corellian Engineering Corporation"));
 
-
 function getObjById(id, objType) {
     const ARR = JSON.parse(localStorage.getItem(objType));
     return ARR[id] || {};
